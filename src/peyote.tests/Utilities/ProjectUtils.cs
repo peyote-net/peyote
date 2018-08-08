@@ -18,22 +18,6 @@ namespace peyote.tests.Utilities
             if(!folder.StartsWith('/'))
                 folder = '/' + folder;
             var newDir = Directory.CreateDirectory(currDirectory + folder);*/
-            var process = new Process()
-            {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = "ls",
-                    Arguments = $"/C  > log.txt",
-                    UseShellExecute = true,
-                    RedirectStandardOutput = false,
-                    RedirectStandardError = false,
-                    CreateNoWindow = true,
-                    WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal
-                }
-            };
-
-            process.Start();
-            process.WaitForExit();
 
             return "wrong";
         }
