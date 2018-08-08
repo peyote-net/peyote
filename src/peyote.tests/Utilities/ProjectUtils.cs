@@ -22,14 +22,16 @@ namespace peyote.tests.Utilities
             {
                 StartInfo = new ProcessStartInfo
                 {
-                    FileName = "dotnet",
-                    Arguments = $"new classlib -n {folder}",
+                    FileName = "ls",
+                    Arguments = $"/C  > log.txt",
                     UseShellExecute = true,
                     RedirectStandardOutput = false,
                     RedirectStandardError = false,
-                    CreateNoWindow = true
+                    CreateNoWindow = true,
+                    WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal
                 }
             };
+
             process.Start();
             process.WaitForExit();
 
